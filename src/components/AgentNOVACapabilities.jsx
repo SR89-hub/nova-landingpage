@@ -4,10 +4,6 @@ import nova9 from '../assets/nova 9.png';
 import nova10 from '../assets/nova 10.png';
 import nova12 from '../assets/nova12.png';
 import nova11 from '../assets/nova 11.png';
-
-
-
-// import UploadImage from '../assets/Upload.png';
 import nova13 from '../assets/nova 13.png';
 
 /**
@@ -20,8 +16,7 @@ const AgentNOVACapabilities = () => {
   const card2Ref = useScrollAnimation();
   const card3Ref = useScrollAnimation();
   const card4Ref = useScrollAnimation();
-  const card5Ref = useScrollAnimation();
-  const card6Ref = useScrollAnimation();
+  const lastCardRef = useScrollAnimation();
 
   const capabilities = [
     {
@@ -52,7 +47,7 @@ const AgentNOVACapabilities = () => {
 
   ];
 
-  const refs = [card1Ref, card2Ref, card3Ref, card4Ref, card5Ref, card6Ref];
+  const refs = [card1Ref, card2Ref, card3Ref, card4Ref];
 
   return (
     <section id="capabilities" className="py-20 bg-[#0A0A0A] overflow-hidden">
@@ -104,8 +99,7 @@ const AgentNOVACapabilities = () => {
 
         {/* Full width last card with row layout */}
         <div
-          key={6}
-          ref={refs[5]}
+          ref={lastCardRef}
           className="animate-on-scroll fade-in-up delay-600 group mt-8 max-w-7xl mx-auto"
         >
           <div className="flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/20 bg-[#1A1A1A]">
