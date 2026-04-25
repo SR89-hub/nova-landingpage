@@ -5,11 +5,11 @@ import nova10 from '../assets/nova 10.png';
 import nova12 from '../assets/nova12.png';
 import nova11 from '../assets/nova 11.png';
 
-import Uploading from '../assets/uploading2.png';
+
 
 
 // import UploadImage from '../assets/Upload.png';
-import Customer from '../assets/Customerss.png'
+
 import nova13 from '../assets/nova 13.png';
 
 /**
