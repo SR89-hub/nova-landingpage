@@ -97,7 +97,7 @@ const Header = () => {
             <img
               src={evokeLogo}
               alt="EVOKE logo"
-              className="h-12 w-auto md:h-14 object-contain shadow-lg shadow-[#6BC4BC]/20"
+              className="h-12 w-auto md:h-14 object-contain"
             />
             <span className="relative inline-block text-[#7DD3CB] font-extrabold text-3xl" style={{ fontFamily: "'Outfit', sans-serif" }}>
               EVOKE AI
@@ -291,7 +291,7 @@ const Header = () => {
             <img
               src={evokeLogo}
               alt="EVOKE logo"
-              className="h-10 w-auto object-contain shadow-lg shadow-[#6BC4BC]/20"
+              className="h-10 w-auto object-contain"
             />
             <span className="inline-block text-[#7DD3CB] font-extrabold text-2xl" style={{ fontFamily: "'Outfit', sans-serif" }}>
               EVOKE AI

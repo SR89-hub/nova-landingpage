@@ -10,13 +10,12 @@ const MeetNOVA = () => {
   return (
     <section id="meet-nova" className="w-full flex flex-col items-center justify-center ">
       {/* Hero Image Container - Responsive sizing with cyan border and glow effect */}
-      <div className='w-full max-w-7xl mx-auto h-[300px] sm:h-[400px] md:h-[700px] lg:h-[800px] xl:h-[800px] rounded-[38px] md:rounded-[83px] overflow-hidden mt-8 sm:mt-6 md:mt-8 relative flex items-start justify-center border-2' style={{ borderColor: '#6BC4BC', boxShadow: '0 0 20px rgba(107, 196, 188, 0.6), 0 0 40px rgba(107, 196, 188, 1), 0 0 80px rgba(107, 196, 188, 0.2)' }} >
+      <div className='w-[95%] max-w-[1600px] mx-auto h-auto md:h-[800px] lg:h-[700px] xl:h-[950px] rounded-[38px] md:rounded-[83px] overflow-hidden mt-8 sm:mt-6 md:mt-8 relative flex items-start justify-center border-2' style={{ borderColor: '#6BC4BC', boxShadow: '0 0 20px rgba(107, 196, 188, 0.6), 0 0 40px rgba(107, 196, 188, 1), 0 0 80px rgba(107, 196, 188, 0.2)' }} >
         {/* Mobile Image - Visible on small screens only */}
         <img
           src={novaMobileImage}
           alt="NOVA"
-          className="w-full h-full object-cover object-top md:hidden rounded-[38px]"
-          style={{ objectPosition: 'center top' }}
+          className="w-full h-auto object-contain md:hidden rounded-[38px]"
         />
         {/* Desktop Image - Visible on medium screens and above */}
         <img

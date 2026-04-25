@@ -5,11 +5,9 @@ import nova10 from '../assets/nova 10.png';
 import nova12 from '../assets/nova12.png';
 import nova11 from '../assets/nova 11.png';
 
-import Uploading from '../assets/uploading2.png';
 
 
 // import UploadImage from '../assets/Upload.png';
-import Customer from '../assets/Customerss.png'
 import nova13 from '../assets/nova 13.png';
 
 /**
@@ -89,14 +87,14 @@ const AgentNOVACapabilities = () => {
                   </div>
 
                   {/* Image Section - Bottom */}
-                  <div className="relative h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden">
+                  <div className="relative h-[250px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden p-4 flex justify-center items-center bg-[#101010]">
                     <img
                       src={capability.image}
                       alt={capability.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                     {/* Optional overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
                   </div>
                 </div>
               </div>
@@ -123,14 +121,14 @@ const AgentNOVACapabilities = () => {
             </div>
 
             {/* Image Section - Right */}
-            <div className="relative w-full lg:w-1/2 h-[200px] sm:h-[250px] md:h-[300px] lg:h-auto overflow-hidden">
+            <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[250px] md:h-[300px] lg:min-h-[350px] overflow-hidden p-4 flex justify-center items-center bg-[#101010]">
               <img
                 src={nova13}
                 alt="Instant Checkout in Chat"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
               />
               {/* Optional overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
             </div>
           </div>
         </div>
