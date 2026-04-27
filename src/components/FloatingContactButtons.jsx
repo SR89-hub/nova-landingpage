@@ -9,7 +9,7 @@ const FloatingContactButtons = () => {
   // Contact information - Update these with your actual contact details
   const whatsappNumber = '7986175240'; // Replace with your WhatsApp number
   const phoneNumber = '7986175240'; // Replace with your phone number
-  const emailAddress = 'damnart.ai.guladab@gmail.com'; // Replace with your email
+  const emailAddress = 'info@evokeaisolutions.com'; // Replace with your email
 
   return (
     <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3">
