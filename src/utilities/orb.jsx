@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Renderer, Program, Mesh, Triangle, Vec3 } from 'ogl';
+import { Renderer, Program, Mesh, Triangle, Vec3, Vec2 } from 'ogl';
 
 export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = true, forceHoverState = false }) {
   const ctnDom = useRef(null);
@@ -90,14 +90,15 @@ export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = tru
 
     vec4 extractAlpha(vec3 colorIn) {
       float a = max(max(colorIn.r, colorIn.g), colorIn.b);
-      return vec4(colorIn.rgb / (a + 1e-5), a);
+      a = pow(a, 1.2); // Softer edges
+      return vec4(colorIn.rgb / (a + 1e-5), a * 0.8);
     }
 
     const vec3 baseColor1 = vec3(0.490, 0.827, 0.796);  // [#7DD3CB]
     const vec3 baseColor2 = vec3(0.420, 0.769, 0.737);  // [#6BC4BC]
     const vec3 baseColor3 = vec3(0.357, 0.686, 0.659);  // [#5BAFA8]
-    const float innerRadius = 0.6;
-    const float noiseScale = 0.65;
+    const float innerRadius = 0.55;
+    const float noiseScale = 0.35;
 
     float light1(float intensity, float attenuation, float dist) {
       return intensity / (1.0 + dist * attenuation);
@@ -148,9 +149,6 @@ export default function Orb({ hue = 0, hoverIntensity = 0.2, rotateOnHover = tru
       float s = sin(angle);
       float c = cos(angle);
       uv = vec2(c * uv.x - s * uv.y, s * uv.x + c * uv.y);
-      
-      uv.x += hover * hoverIntensity * 0.1 * sin(uv.y * 10.0 + iTime);
-      uv.y += hover * hoverIntensity * 0.1 * sin(uv.x * 10.0 + iTime);
       
       return draw(uv);
     }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
-import { 
-  Mail, 
+import {
+  Mail,
   Send,
   User,
   Building,
@@ -10,7 +10,6 @@ import {
   CheckCircle,
   XCircle
 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 /**
  * Contact Component
@@ -32,10 +31,7 @@ const Contact = () => {
   const [status, setStatus] = useState({ type: '', message: '' }); // Success/error message state
 
 
-  // Initialize EmailJS
-  useEffect(() => {
-    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "AWeroNVwYG4aGzG1D");
-  }, []);
+
 
   // Handle input field changes
   const handleChange = (e) => {
@@ -56,33 +52,36 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
-    
-    // Prepare EmailJS template parameters from form data
-    const templateParams = {
-      fullName: formData.fullName,
-      email: formData.email,
-      company: formData.company , 
-      phone: formData.phone, 
-      
-      message: formData.message || ''// Optional field
-    };
 
     try {
-      // Send email using EmailJS service
-      // Uses environment variables for service and template IDs, with fallback values
-      await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_1wzzo5z",
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "template_pw54fxy",
-        templateParams
-      );
+      // Send data to n8n webhook
+      const response = await fetch('https://damnart-ai-guladab.n8n-wsk.com/webhook/51aafbf6-6b9b-4d7f-93ba-f0076175695e', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          source: 'Contact Form',
+          form_type: 'General Inquiry',
+          plan: 'Contact Form',
+          agent: 'Nova',
+          name: formData.fullName,
+          ...formData,
+          submittedAt: new Date().toISOString()
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
 
       // Show success message
-      setStatus({ 
-        type: 'success', 
-        message: 'Message sent successfully! We will get back to you soon.' 
+      setStatus({
+        type: 'success',
+        message: 'Message sent successfully! We will get back to you soon.'
       });
-      
-      // Reset form to initial state
+
+      // Reset form
       setFormData({
         fullName: '',
         company: '',
@@ -92,18 +91,12 @@ const Contact = () => {
         message: '',
       });
     } catch (err) {
-      // Log error in development mode only (prevents console spam in production)
-      if (process.env.NODE_ENV === 'development') {
-        console.error('❌ EmailJS Error:', err);
-      }
-
-      // Show error message to user
-      setStatus({ 
-        type: 'error', 
-        message: 'Failed to send message. Please try again or contact us directly.' 
+      console.error('❌ Webhook Error:', err);
+      setStatus({
+        type: 'error',
+        message: `Submission failed: ${err.message}. Please check your connection or try again later.`
       });
     } finally {
-      // Always reset submitting state, regardless of success or failure
       setIsSubmitting(false);
     }
   };
@@ -168,7 +161,7 @@ const Contact = () => {
             <div className="group">
               <label htmlFor="company" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 <Building className="w-4 h-4 text-[#6BC4BC]" />
-                
+
                 Company  <span className="text-[#6BC4BC]">*</span>
               </label>
               <input
@@ -222,21 +215,21 @@ const Contact = () => {
               </div>
             </div>
 
-      
-            
+
+
 
             {/* Message Textarea - Required field */}
             <div className="group">
               <label htmlFor="message" className="flex items-center gap-2 text-gray-300 mb-2 text-sm font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>
                 <MessageSquare className="w-4 h-4 text-[#6BC4BC]" />
-                Message 
+                Message
               </label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                
+
                 rows={6}
                 className="w-full px-4 py-3 bg-[#0A0A0A] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#6BC4BC] focus:ring-2 focus:ring-[#6BC4BC]/20 transition-all duration-300 resize-none"
                 placeholder="Tell us about your inquiry..."
@@ -245,11 +238,10 @@ const Contact = () => {
 
             {/* Status Message - Success or Error feedback */}
             {status.message && (
-              <div className={`flex items-center gap-3 p-4 rounded-lg ${
-                status.type === 'success' 
-                  ? 'bg-green-500/10 border border-green-500/30 text-green-400' 
-                  : 'bg-red-500/10 border border-red-500/30 text-red-400'
-              }`}>
+              <div className={`flex items-center gap-3 p-4 rounded-lg ${status.type === 'success'
+                ? 'bg-green-500/10 border border-green-500/30 text-green-400'
+                : 'bg-red-500/10 border border-red-500/30 text-red-400'
+                }`}>
                 {/* Success or Error icon */}
                 {status.type === 'success' ? (
                   <CheckCircle className="w-5 h-5 flex-shrink-0" />

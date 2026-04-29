@@ -19,7 +19,7 @@ const DelightfulService = () => {
         </svg>
       ),
       title: 'AI Campaign Copywriting',
-      description: 'NOVA’s advanced AI generates high-impact, context-aware copy for Email, SMS, and WhatsApp. It applies professional copywriting techniques and tailored tone control to create persuasive, brand-aligned messages that drive conversions instantly.',
+      description: 'NOVA’s advanced AI generates high-impact, context-aware copy for Email. It applies professional copywriting techniques and tailored tone control to create persuasive, brand-aligned messages that drive conversions instantly.',
     },
     {
       icon: (

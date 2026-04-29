@@ -34,8 +34,8 @@ const FAQs = () => {
       icon: <FileQuestion className="w-6 h-6" />,
     },
     {
-      question: 'Can I use NOVA for platforms other than Email, SMS, and WhatsApp?',
-      answer: 'Currently, NOVA is specifically optimized for Email, SMS, and WhatsApp. This ensures every message meets the unique formatting and engagement best practices for these three primary channels.',
+      question: 'Can I use NOVA for platforms other than Email?',
+      answer: 'Currently, NOVA is specifically optimized for Email. This ensures every message meets the unique formatting and engagement best practices for these three primary channels.',
       icon: <MessageCircleQuestion className="w-6 h-6" />,
     },
     {
@@ -47,11 +47,6 @@ const FAQs = () => {
       question: 'What is the Legacy Data Optimizer?',
       answer: 'It is an automated tool that cleans and verifies your imported contact lists. By filtering out invalid data, it ensures your campaigns reach only high-quality, verified contacts.',
       icon: <Globe className="w-6 h-6" />,
-    },
-    {
-      question: 'Do I need a credit card to start?',
-      answer: 'No. You can sign up for the Starter Plan for free. It includes 1,000 emails per month and core AI features without requiring any credit card information.',
-      icon: <Mail className="w-6 h-6" />,
     },
   ];
 

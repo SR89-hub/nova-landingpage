@@ -20,23 +20,23 @@ const AgentNOVACapabilities = () => {
 
   const capabilities = [
     {
-      title: 'Context-Aware Copy',
-      description: 'Our AI analyzes your business context and industry terminology to generate authentic, consistent copy. It adapts to your unique brand voice, ensuring every personalized message resonates deeply with your audience.',
+      title: 'Smart Message Crafting',
+      description: 'NOVA combines your creativity with AI to make email marketing easy.Write your own messages or let the NOVA Crafter generate high-performing copy for you.Our automatic three-step follow-up ensures you never miss a lead or a connection.NOVA handles the busy work so you can focus on growing your business..',
       image: nova9,
     },
     {
-      title: 'Professional Quality',
-      description: 'NOVA applies professional copywriting techniques and persuasive best practices to every message. Trained on thousands of successful campaigns, it delivers clear, error-free, and compelling content that ensures high-quality, effective communication.',
+      title: ' Enterprise-Grade Security',
+      description: 'nova keeps your account safe with high-level login security and strict session management.Your organizations data is fully encrypted and isolated in secure, private environments.We handle the technical safeguards so you can manage your team with total peace of mind..',
       image: nova11,
     },
     {
-      title: 'Time Saving',
-      description: 'Reclaim your time for strategy and growth. NOVA generates polished, ready-to-use variations in under 10 seconds, eliminating hours of brainstorming and editing to provide instant, high-quality messages for your business.',
+      title: 'Intelligent Influencer Discovery',
+      description: 'NOVA makes finding influencers easy by filtering for your specific niche, location, and audience size.Our system uses real engagement data to match you with creators who deliver proven results.We handle the searching and the stats so you can focus on building a brand that grows..',
       image: nova12,
     },
     {
-      title: 'Tailored Tone Control',
-      description: 'NOVA uses your goals to capture the perfect tone, from formal B2B to casual outreach. By matching your audiences expectations, it ensures every message has the precise emotional resonance required.',
+      title: 'Precision Analytics & Tracking',
+      description: 'Track your success in real-time with visual dashboards that monitor everything from open rates to individual clicks.Easily follow every recipient’s journey and turn your campaign data into professional PDF reports with a single click..',
       image: nova10,
     },
     // {

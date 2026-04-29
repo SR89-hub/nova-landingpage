@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import emailjs from '@emailjs/browser';
 
 export default function PricingSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,10 +14,7 @@ export default function PricingSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
-  // Initialize EmailJS
-  useEffect(() => {
-    emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY || "AWeroNVwYG4aGzG1D");
-  }, []);
+
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -114,12 +110,12 @@ export default function PricingSection() {
   return (
     <div id="pricingSection" className="min-h-screen bg-[#0A0A0A] py-20 px-4">
       <div className="max-w-6xl mx-auto text-center mb-14">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 "style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Find the <span className="section-title">Perfect Plan</span>
-          </h2>
-          <p className="mt-4 text-gray-400 text-base sm:text-lg "style={{ fontFamily: "'Poppins', sans-serif" }}>
-             Choose the NOVA intelligence layer your business needs — tailored to support your goals, your workflows, and your customers.
-          </p>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 " style={{ fontFamily: "'Outfit', sans-serif" }}>
+          Find the <span className="section-title">Perfect Plan</span>
+        </h2>
+        <p className="mt-4 text-gray-400 text-base sm:text-lg " style={{ fontFamily: "'Poppins', sans-serif" }}>
+          Choose the NOVA intelligence layer your business needs — tailored to support your goals, your workflows, and your customers.
+        </p>
       </div>
 
       <motion.div
@@ -142,7 +138,7 @@ export default function PricingSection() {
             )}
             <h3 className="text-2xl font-semibold text-white">{card.title}</h3>
             <p className="text-gray-400 mt-2 min-h-[48px] text-sm">{card.desc}</p>
-            
+
             <div className="my-6 flex items-baseline gap-2">
               <span className="text-4xl font-bold text-white">{card.price}</span>
               {card.period && <span className="text-gray-400 font-medium">{card.period}</span>}
@@ -151,13 +147,13 @@ export default function PricingSection() {
             <ul className="mb-8 space-y-3 text-gray-300 flex-grow">
               {card.features.map((f, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-[#7DD3CB] mt-1 text-sm">✔</span> 
+                  <span className="text-[#7DD3CB] mt-1 text-sm">✔</span>
                   <span className="text-sm">{f}</span>
                 </li>
               ))}
             </ul>
 
-            <button 
+            <button
               onClick={() => {
                 setSelectedPlan(card);
                 setIsModalOpen(true);
@@ -172,7 +168,7 @@ export default function PricingSection() {
 
       {/* Modal Form */}
       {isModalOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
           onClick={closeModal}
         >
@@ -201,52 +197,48 @@ export default function PricingSection() {
               </div>
 
               {/* Form */}
-              <form 
+              <form
                 onSubmit={async (e) => {
                   e.preventDefault();
                   setIsSubmitting(true);
                   setSubmitStatus({ type: '', message: '' });
 
-                  // Prepare EmailJS template parameters
-                  const templateParams = {
-                    fullName: formData.name,
-                    email: formData.email,
-                    phone: formData.phone,
-                    company: formData.company || 'Not provided',
-                    message: formData.message || 'No additional message',
-                    subject: selectedPlan?.button || 'N/A',
-                  
-                  };
-
                   try {
-                    // Send email using EmailJS service
-                    await emailjs.send(
-                      process.env.REACT_APP_EMAILJS_SERVICE_ID || "service_1wzzo5z",
-                      "template_pw54fxy",
-                      templateParams
-                    );
-
-                    // Show success message
-                    setSubmitStatus({ 
-                      type: 'success', 
-                      message: 'Thank you! We will contact you soon.' 
+                    // Send data to n8n webhook
+                    const response = await fetch('https://damnart-ai-guladab.n8n-wsk.com/webhook/51aafbf6-6b9b-4d7f-93ba-f0076175695e', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        source: 'Pricing Section',
+                        plan: selectedPlan?.title,
+                        form_type: selectedPlan?.title === "Starter Plan" ? "New Plan Inquiry" : "Plan Upgradation Request",
+                        agent: 'Nova',
+                        ...formData,
+                        submittedAt: new Date().toISOString()
+                      }),
                     });
 
-                    // Reset form and close modal after a short delay
+                    if (!response.ok) {
+                      throw new Error('Failed to send request');
+                    }
+
+                    // Show success message
+                    setSubmitStatus({
+                      type: 'success',
+                      message: 'Thank you! We will contact you soon.'
+                    });
+
                     setTimeout(() => {
                       closeModal();
                       setSubmitStatus({ type: '', message: '' });
                     }, 2000);
                   } catch (err) {
-                    // Log error in development mode only
-                    if (process.env.NODE_ENV === 'development') {
-                      console.error('❌ EmailJS Error:', err);
-                    }
-
-                    // Show error message
-                    setSubmitStatus({ 
-                      type: 'error', 
-                      message: 'Failed to send request. Please try again or contact us directly.' 
+                    console.error('❌ Webhook Error:', err);
+                    setSubmitStatus({
+                      type: 'error',
+                      message: `Submission failed: ${err.message}. Please check your connection or try again later.`
                     });
                   } finally {
                     setIsSubmitting(false);
@@ -337,11 +329,10 @@ export default function PricingSection() {
 
                 {/* Status Message */}
                 {submitStatus.message && (
-                  <div className={`p-3 rounded-lg ${
-                    submitStatus.type === 'success' 
-                      ? 'bg-green-500/20 text-green-400 border border-green-500/50' 
-                      : 'bg-red-500/20 text-red-400 border border-red-500/50'
-                  }`}>
+                  <div className={`p-3 rounded-lg ${submitStatus.type === 'success'
+                    ? 'bg-green-500/20 text-green-400 border border-green-500/50'
+                    : 'bg-red-500/20 text-red-400 border border-red-500/50'
+                    }`}>
                     {submitStatus.message}
                   </div>
                 )}
@@ -351,11 +342,10 @@ export default function PricingSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`flex-1 py-3 rounded-xl font-semibold transition-colors ${
-                      isSubmitting
-                        ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
-                        : 'bg-[#6BC4BC] text-black hover:bg-[#5BAFA8]'
-                    }`}
+                    className={`flex-1 py-3 rounded-xl font-semibold transition-colors ${isSubmitting
+                      ? 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                      : 'bg-[#6BC4BC] text-black hover:bg-[#5BAFA8]'
+                      }`}
                   >
                     {isSubmitting ? 'Sending...' : 'Submit Request'}
                   </button>

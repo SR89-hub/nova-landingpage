@@ -15,7 +15,6 @@ import Contact from "./Contact";
 import FinalCTA from "./FinalCTA";
 import Footer from "./Footer";
 import FloatingContactButtons from "./FloatingContactButtons";
-import ScrollToTopButton from "./ScrollToTopButton";
 import { initScrollAnimations } from "../utils/animations";
 
 /**
@@ -52,8 +51,7 @@ function Home() {
       <Footer />
       {/* Floating action buttons (WhatsApp, Phone, Email) */}
       <FloatingContactButtons />
-      {/* Scroll to top button */}
-      <ScrollToTopButton />
+      {/* Scroll to top button is now part of FloatingContactButtons */}
     </div>
   );
 }

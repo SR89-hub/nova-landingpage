@@ -41,10 +41,10 @@ const MeetNOVA = () => {
               <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent">
                 NOVA—
               </span>{" "}
-              your dedicated{" "}
+              the future of {" "}
               {/* Gradient text effect for "AI Assistant" */}
               <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-bold">
-                AI Assistant
+                intelligent Email marketing
               </span>
             </span>
           </h2>
@@ -54,24 +54,25 @@ const MeetNOVA = () => {
             className="mt-6 text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl text-gray-300 leading-relaxed"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
-            The world's first  <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-semibold">
-              AI Email assistant
+            NOVA is a modern, comprehensive <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-semibold">
+              Email Marketing  Ecosystem
             </span>{" "}
-            that's trained on thousands of
+            designed to bridge the gap between
             {/* Highlighted text with gradient */}
-            <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-semibold">
-              <t></t>best practices.
+            <t></t> <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-semibold">
+              artificial intelligence and human connection
             </span>{" "}
             Powered by{" "}
             {/* Highlighted "EVOKE" with gradient */}
             <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-bold">
               EVOKE AI
-            </span>
+              <t></t></span>
+            We provide a secure, real-time platform that empowers you to craft, track, and optimize your outreach with surgical precision
             , From crafting emails to designing effective win-back automations, NOVA ensures your emails achieve maximum results.
-            NOVA boosts email productivity by automating and {" "}
+            Our mission is to eliminate the manual overhead of email marketing, allowing you to focus on strategy while {" "}
             {/* Highlighted text with gradient */}
             <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-bold">
-              optimizing your email communication.
+              NOVA handles the execution.
             </span>{" "}
 
           </p>

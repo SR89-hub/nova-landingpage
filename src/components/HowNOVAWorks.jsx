@@ -1,11 +1,12 @@
 import React from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
 import Deploy from '../assets/Deploy.png';
-import { 
-  BarChart3, 
-  BookOpen, 
-  Palette, 
-  Rocket, 
+import Step1Img from '../assets/1.png';
+import {
+  BarChart3,
+  BookOpen,
+  Palette,
+  Rocket,
   Settings,
   Brain,
   Mail,
@@ -18,7 +19,7 @@ import {
  * How NOVA Works Component
  * Roadmap section showing the 4-step process of how NOVA works
  */
-const  HowNOVAPlanWorks = () => {
+const HowNOVAPlanWorks = () => {
   const titleRef = useScrollAnimation();
   const step1Ref = useScrollAnimation();
   const step2Ref = useScrollAnimation();
@@ -30,6 +31,7 @@ const  HowNOVAPlanWorks = () => {
       number: '1',
       title: 'Build',
       description: 'Choose a template or start from scratch using the visual builder.',
+      image: Step1Img,
       icon: <BarChart3 className="w-8 h-8" />,
     },
     {
@@ -122,11 +124,11 @@ const  HowNOVAPlanWorks = () => {
           <div className="relative">
             {/* Animated background glow */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-32 bg-[#6BC4BC]/5 blur-3xl rounded-full animate-pulse-slow"></div>
-            
+
             {/* Horizontal connecting line with glow */}
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#6BC4BC]/30 to-[#6BC4BC]/50 via-[#6BC4BC]/30 to-transparent transform -translate-y-1/2 hidden md:block"></div>
             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[#6BC4BC] via-[#6BC4BC]/50 to-[#6BC4BC] transform -translate-y-1/2 hidden md:block shadow-[0_0_20px_rgba(107, 196, 188,0.5)]"></div>
-            
+
             {/* Horizontal shimmer line overlay */}
             <div className="absolute top-1/2 left-0 right-0 h-2 transform -translate-y-1/2 hidden md:block overflow-hidden">
               <div className="h-full w-1/3 bg-gradient-to-r from-transparent via-[#7DD3CB]/90 to-transparent animate-horizontal-shimmer shadow-[0_0_30px_rgba(107, 196, 188,0.8)]"></div>
@@ -134,35 +136,43 @@ const  HowNOVAPlanWorks = () => {
 
             {/* Steps in horizontal row */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 relative z-10">
-            {steps.map((step, index) => {
-              const delay = `delay-${(index + 1) * 100}`;
-              
-              return (
-                <div
-                  key={index}
-                  ref={refs[index]}
+              {steps.map((step, index) => {
+                const delay = `delay-${(index + 1) * 100}`;
+
+                return (
+                  <div
+                    key={index}
+                    ref={refs[index]}
                     className={`animate-on-scroll fade-in-up ${delay} group`}
                   >
                     <div className="flex flex-col items-center text-center h-full transform transition-all duration-500 hover:scale-105">
                       {/* Step Number Circle with enhanced animations */}
-                    
+
 
                       {/* Step Content Card with enhanced styling */}
                       <div className="relative bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212] border border-gray-800 rounded-2xl p-6 md:p-8 hover:border-[#6BC4BC]/70 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/30 w-full flex-1 flex flex-col transform group-hover:-translate-y-2 overflow-hidden">
                         {/* Gradient overlay on hover */}
                         <div className="absolute inset-0 bg-gradient-to-br from-[#6BC4BC]/5 via-transparent to-[#5BAFA8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        
+
                         {/* Animated border glow */}
                         <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#6BC4BC]/0 via-[#6BC4BC]/20 to-[#5BAFA8]/0 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 -z-10"></div>
-                        
+
                         <div className="relative z-10">
-                          {/* Icon */}
+                          {/* Icon or Image */}
                           <div className="flex justify-center mb-4">
                             <div className="text-[#6BC4BC] group-hover:text-[#7DD3CB] transition-colors duration-300">
-                              {step.icon}
+                              {step.image ? (
+                                <img 
+                                  src={step.image} 
+                                  alt={step.title} 
+                                  className="w-48 h-48 object-contain rounded-xl mb-4 border border-[#6BC4BC]/20 bg-white/5 p-2" 
+                                />
+                              ) : (
+                                step.icon
+                              )}
                             </div>
                           </div>
-                          
+
                           {/* Step number badge */}
                           <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-[#6BC4BC]/20 to-[#5BAFA8]/20 border border-[#6BC4BC]/30 mb-4 text-[#7DD3CB] font-bold text-sm">
                             {step.number}
@@ -172,14 +182,14 @@ const  HowNOVAPlanWorks = () => {
                             {step.title}
                           </h3>
                           <p className="text-gray-400 leading-relaxed text-sm md:text-base flex-grow group-hover:text-gray-300 transition-colors duration-300" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                          {step.description}
-                        </p>
+                            {step.description}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
             </div>
           </div>
         </div>

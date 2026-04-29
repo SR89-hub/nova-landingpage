@@ -99,7 +99,7 @@ const Header = () => {
               alt="EVOKE logo"
               className="h-12 w-auto md:h-14 object-contain"
             />
-            <span className="relative inline-block text-[#7DD3CB] font-extrabold text-3xl" style={{ fontFamily: "'Outfit', sans-serif" }}>
+            <span className="relative inline-block text-[#7DD3CB] font-extrabold text-2xl" style={{ fontFamily: "'Outfit', sans-serif" }}>
               EVOKE AI
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6BC4BC] group-hover:w-full transition-all duration-300"></span>
             </span>

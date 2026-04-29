@@ -1,7 +1,9 @@
 import React from 'react';
 import { useScrollAnimation } from '../utils/useScrollAnimation';
-import Deploy from '../assets/nova 5.png';
+import Deploy from '../assets/1.png';
 import Process from '../assets/nova 4.png';
+import Step1Img from '../assets/nova 5.png';
+import NewImg from '../assets/new.png';
 import {
   Upload,
   Brain,
@@ -28,32 +30,40 @@ const HowNOVAWorksPage = () => {
   const step1Ref = useScrollAnimation({ threshold: 0.15 });
   const step2Ref = useScrollAnimation({ threshold: 0.15 });
   const step3Ref = useScrollAnimation({ threshold: 0.15 });
+  const step4Ref = useScrollAnimation({ threshold: 0.15 });
 
   const steps = [
     {
       number: '1',
-      title: 'Upload Your data',
-      description: 'Import your contact list in any format. NOVA Legacy Data Optimizer automatically cleans, verifies, and filters your data to ensure your campaigns reach valid, high-quality contacts.',
+      title: 'Onboarding & Setup',
+      description: 'Create your organization profile and configure your workspace. Use our built-in testing tools to ensure your account is ready for seamless communication.',
       icon: <Upload className="w-8 h-8" />,
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      image: Step1Img,
     },
     {
       number: '2',
-      title: 'create your campaign',
-      description: 'Use NOVA AI Campaign Builder to generate persuasive, conversion-driven emails in seconds. Define your tone, objective, and target audience — NOVA takes care of the rest.',
+      title: ' Campaign Architecture',
+      description: 'Target & Personalize: Upload your CSV and use NOVA Crafter to generate intelligent content, then Automate & Persist by deploying a one-click, three-stage follow-up sequence for natural, persistent outreach.',
       icon: <Brain className="w-8 h-8" />,
       image: Process,
     },
     {
       number: '3',
-      title: 'launch your campaign',
-      description: 'Send your optimized emails instantly or schedule them for later. NOVA ensures seamless delivery and consistent inbox performance for every campaign.',
+      title: 'Deployment',
+      description: 'Review your campaign status (Draft, Pending, or Scheduled). Set your launch date and let the platform handle the heavy lifting.',
       icon: <Rocket className="w-8 h-8" />,
       image: Deploy,
     },
+    {
+      number: '4',
+      title: ' Monitor & Optimize',
+      description: 'Visit the "Email Tracking dashboard" to see real-time engagement. Identify top-engaged users and watch as follow-ups are automatically tracked or reset when you add new contacts to a live campaign.',
+      icon: <Rocket className="w-8 h-8" />,
+      image: NewImg,
+    },
   ];
 
-  const refs = [step1Ref, step2Ref, step3Ref];
+  const refs = [step1Ref, step2Ref, step3Ref, step4Ref];
 
   // FileTypeVisualization Component
   const FileTypeVisualization = () => (
@@ -261,20 +271,12 @@ const HowNOVAWorksPage = () => {
                   >
                     <div className="relative flex flex-col md:flex-row p-2 sm:p-4 md:p-6 lg:p-8 items-stretch h-full transform transition-all duration-500 gap-0 overflow-hidden rounded-2xl border border-gray-800 hover:border-[#6BC4BC]/70 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/30 bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212]">
                       {/* Image Section - Full Size */}
-                      <div className={`relative w-full md:w-1/2 h-[300px] sm:h-[300px] md:h-[300px] lg:h-auto overflow-hidden ${isEven ? 'md:order-2' : 'md:order-1'}`}>
-                        {index === 0 ? (
-                          // Custom file type visualization for first step
-                          <FileTypeVisualization />
-                        ) : (
-                          // Regular images for other steps
-                          <>
-                            <img
-                              src={step.image}
-                              alt={step.title}
-                              className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
-                            />
-                          </>
-                        )}
+                      <div className={`relative w-full md:w-1/2 h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto overflow-hidden ${isEven ? 'md:order-2' : 'md:order-1'}`}>
+                        <img
+                          src={step.image}
+                          alt={step.title}
+                          className={`w-full h-full object-contain ${index < 2 ? 'p-0' : 'p-4'} transition-transform duration-500 group-hover:scale-110`}
+                        />
                       </div>
 
                       {/* Vertical Cyan Line Separator */}
