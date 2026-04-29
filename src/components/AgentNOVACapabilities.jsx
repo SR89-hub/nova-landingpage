@@ -63,15 +63,15 @@ const AgentNOVACapabilities = () => {
               return (
                 <div
                   key={index}
-                  className={`flex-none w-[85%] sm:w-[450px] md:w-[500px] lg:w-full snap-center animate-on-scroll fade-in-up ${delay} group ${isFifth ? 'lg:col-span-2' : ''}`}
+                  className={`flex-none w-[85%] sm:w-[450px] md:w-[500px] lg:w-full snap-center animate-on-scroll fade-in-up ${delay} group ${isFifth ? 'lg:col-span-2 lg:max-w-5xl lg:mx-auto' : ''}`}
                 >
                   <div className={`flex flex-col ${isFifth ? 'lg:flex-row' : ''} h-full rounded-2xl overflow-hidden border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/20 bg-[#1A1A1A]`}>
                     {/* Content Section */}
-                    <div className={`p-6 sm:p-8 flex-1 flex flex-col ${isFifth ? 'lg:w-1/2 lg:justify-start lg:pt-16' : 'justify-center'}`}>
-                      <h3 className={`${isFifth ? 'text-2xl sm:text-3xl lg:text-4xl' : 'text-xl sm:text-2xl'} font-bold text-white mb-4`} style={{ fontFamily: "'Outfit', sans-serif" }}>
+                    <div className={`p-6 sm:p-8 flex-1 flex flex-col ${isFifth ? 'lg:w-1/2 lg:justify-center lg:py-10' : 'justify-center'}`}>
+                      <h3 className={`${isFifth ? 'text-2xl sm:text-3xl' : 'text-xl sm:text-2xl'} font-bold text-white mb-4`} style={{ fontFamily: "'Outfit', sans-serif" }}>
                         {capability.title}
                       </h3>
-                      <p className={`text-gray-300 leading-relaxed ${isFifth ? 'text-base sm:text-lg lg:text-xl' : 'text-sm sm:text-base'}`} style={{ fontFamily: "'Poppins', sans-serif" }}>
+                      <p className={`text-gray-300 leading-relaxed ${isFifth ? 'text-base sm:text-lg' : 'text-sm sm:text-base'}`} style={{ fontFamily: "'Poppins', sans-serif" }}>
                         {capability.description}
                       </p>
                     </div>
