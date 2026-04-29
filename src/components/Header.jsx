@@ -186,7 +186,7 @@ const Header = () => {
             <button
               id="menu-btn"
               type="button"
-              className="text-white focus:outline-none p-2 rounded-lg hover:bg-white/10 transition-colors duration-300"
+              className="text-white focus:outline-none p-3 rounded-lg hover:bg-white/10 transition-colors duration-300"
               onClick={toggleMenu}
             >
               <svg
@@ -234,7 +234,7 @@ const Header = () => {
       >
         <div className="container mx-auto px-6 flex items-center justify-between w-full">
           {/* Brand name in ribbon */}
-          <span className="text-white text-sm md:text-base font-medium font-extrabold">
+          <span className="text-white text-xs sm:text-sm md:text-base font-medium font-extrabold">
             NOVA
             <span className="text-[#6BC4BC] ml-1"> AI Assistant </span>
           </span>

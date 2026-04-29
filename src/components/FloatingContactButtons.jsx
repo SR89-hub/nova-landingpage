@@ -31,13 +31,13 @@ const FloatingContactButtons = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3">
       {/* WhatsApp Button - Opens WhatsApp chat */}
       <a
         href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center justify-center w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-wa-pulse"
+        className="group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] hover:bg-[#20BA5A] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-wa-pulse"
         aria-label="Contact us on WhatsApp"
       >
         <svg 
@@ -56,7 +56,7 @@ const FloatingContactButtons = () => {
       {/* Phone/Call Button - Initiates phone call */}
       <a
         href={`tel:${phoneNumber}`}
-        className="group flex items-center justify-center w-14 h-14 bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] hover:from-[#7DD3CB] hover:to-[#6BC4BC] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        className="group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] hover:from-[#7DD3CB] hover:to-[#6BC4BC] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         aria-label="Call us"
       >
         <Phone className="w-6 h-6 text-black" />
@@ -69,7 +69,7 @@ const FloatingContactButtons = () => {
       {/* Email Button - Opens default email client */}
       <a
         href={`mailto:${emailAddress}`}
-        className="group flex items-center justify-center w-14 h-14 bg-[#0A0A0A] border-2 border-[#6BC4BC] hover:bg-[#6BC4BC]/10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        className="group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#0A0A0A] border-2 border-[#6BC4BC] hover:bg-[#6BC4BC]/10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         aria-label="Send us an email"
       >
         <Mail className="w-6 h-6 text-[#6BC4BC] group-hover:text-[#7DD3CB]" />
@@ -81,7 +81,7 @@ const FloatingContactButtons = () => {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`group flex items-center justify-center w-14 h-14 bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] hover:from-[#7DD3CB] hover:to-[#6BC4BC] rounded-full shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 ${
+        className={`group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] hover:from-[#7DD3CB] hover:to-[#6BC4BC] rounded-full shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Back to top"

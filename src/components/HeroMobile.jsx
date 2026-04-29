@@ -119,7 +119,7 @@ const HeroMobile = () => {
           <div className="text-center max-w-6xl">
             <h2
               ref={titleRef}
-              className="animate-on-scroll fade-in-up text-5xl font-bold text-white leading-tight mb-20"
+              className="animate-on-scroll fade-in-up text-4xl sm:text-5xl font-bold text-white leading-tight mb-12"
               style={{ 
                 fontFamily: "'Outfit', sans-serif", 
                 fontWeight: 800,
@@ -128,7 +128,7 @@ const HeroMobile = () => {
             >
               <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent filter drop-shadow-[0_0_10px_rgba(107,196,188,0.4)]">NOVA</span>
               <br />
-              <span className="text-2xl font-semibold text-gray-200 mt-4 block" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
+              <span className="text-xl sm:text-2xl font-semibold text-gray-200 mt-4 block" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
                 Your First Step Towards
                 <br />
                 <span className="text-white italic">AI Adoption</span>

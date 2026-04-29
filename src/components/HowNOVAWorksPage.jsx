@@ -197,9 +197,9 @@ const HowNOVAWorksPage = () => {
                       transitionDelay: `${(index + 1) * 100}ms`,
                     }}
                   >
-                    <div className="relative flex flex-col md:flex-row p-2 sm:p-4 md:p-6 lg:p-8 items-stretch h-full transform transition-all duration-500 gap-0 overflow-hidden rounded-2xl border border-gray-800 hover:border-[#6BC4BC]/70 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/30 bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212]">
+                    <div className="relative flex flex-col md:flex-row p-4 sm:p-6 md:p-6 lg:p-8 items-stretch h-full transform transition-all duration-500 gap-6 md:gap-0 overflow-hidden rounded-2xl border border-gray-800 hover:border-[#6BC4BC]/70 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/30 bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212]">
                       {/* Image Section - Full Size */}
-                      <div className={`relative w-full md:w-1/2 h-[300px] sm:h-[350px] md:h-[400px] lg:h-auto overflow-hidden ${isEven ? 'md:order-2' : 'md:order-1'}`}>
+                      <div className={`relative w-full md:w-1/2 h-auto aspect-square sm:aspect-video md:h-[400px] lg:h-auto overflow-hidden ${isEven ? 'md:order-2' : 'md:order-1'}`}>
                         <img
                           src={step.image}
                           alt={step.title}

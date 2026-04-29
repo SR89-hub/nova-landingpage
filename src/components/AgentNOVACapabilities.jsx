@@ -82,7 +82,7 @@ const AgentNOVACapabilities = () => {
                   </div>
 
                   {/* Image Section - Bottom */}
-                  <div className="relative h-[250px] sm:h-[250px] md:h-[300px] lg:h-[350px] overflow-hidden p-4 flex justify-center items-center bg-[#101010]">
+                  <div className="relative h-auto aspect-square sm:aspect-video md:h-[300px] lg:h-[350px] overflow-hidden p-4 flex justify-center items-center bg-[#101010]">
                     <img
                       src={capability.image}
                       alt={capability.title}
@@ -115,7 +115,7 @@ const AgentNOVACapabilities = () => {
             </div>
 
             {/* Image Section - Right */}
-            <div className="relative w-full lg:w-1/2 h-[250px] sm:h-[250px] md:h-[300px] lg:min-h-[350px] overflow-hidden p-4 flex justify-center items-center bg-[#101010]">
+            <div className="relative w-full lg:w-1/2 h-auto aspect-square sm:aspect-video md:h-[300px] lg:min-h-[350px] overflow-hidden p-4 flex justify-center items-center bg-[#101010]">
               <img
                 src={nova13}
                 alt="Instant Checkout in Chat"

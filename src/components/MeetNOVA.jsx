@@ -10,7 +10,7 @@ const MeetNOVA = () => {
   return (
     <section id="meet-nova" className="w-full flex flex-col items-center justify-center ">
       {/* Hero Image Container - Responsive sizing with cyan border and glow effect */}
-      <div className='w-[95%] max-w-[1600px] mx-auto h-auto md:h-[800px] lg:h-[700px] xl:h-[950px] rounded-[38px] md:rounded-[83px] overflow-hidden mt-8 sm:mt-6 md:mt-8 relative flex items-start justify-center border-2' style={{ borderColor: '#6BC4BC', boxShadow: '0 0 20px rgba(107, 196, 188, 0.6), 0 0 40px rgba(107, 196, 188, 1), 0 0 80px rgba(107, 196, 188, 0.2)' }} >
+      <div className='w-[95%] max-w-[1600px] mx-auto h-auto md:h-[800px] lg:h-[700px] xl:h-[950px] rounded-[30px] md:rounded-[83px] overflow-hidden mt-8 relative flex items-start justify-center border-2' style={{ borderColor: '#6BC4BC', boxShadow: '0 0 15px rgba(107, 196, 188, 0.4), 0 0 30px rgba(107, 196, 188, 0.2)' }} >
         {/* Mobile Image - Visible on small screens only */}
         <img
           src={novaMobileImage}
@@ -31,7 +31,7 @@ const MeetNOVA = () => {
         <div className="text-center max-w-6xl mx-auto my-7">
           {/* Main Heading - "Meet NOVA — your dedicated AI Assistant" */}
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight"
             style={{ fontFamily: "'Barlow', sans-serif", fontWeight: 800 }}
           >
             {/* Keep heading on one line using whitespace-nowrap */}
@@ -51,7 +51,7 @@ const MeetNOVA = () => {
 
           {/* Body Paragraph - Description of NOVA */}
           <p
-            className="mt-6 text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl text-gray-300 leading-relaxed"
+            className="mt-6 text-lg sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl text-gray-300 leading-relaxed"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             NOVA is a modern, comprehensive <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-semibold">

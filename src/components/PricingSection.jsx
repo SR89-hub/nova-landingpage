@@ -129,7 +129,7 @@ export default function PricingSection() {
             key={i}
             whileHover={{ scale: 1.05, borderColor: '#6BC4BC' }}
             transition={{ type: "spring", stiffness: 200 }}
-            className={`w-[320px] bg-[#121212] shadow-xl rounded-2xl p-8 border ${card.badge === "Most Popular" ? "border-[#6BC4BC]" : "border-[#2A2A2A]"} flex flex-col relative`}
+            className={`w-full max-w-[340px] bg-[#121212] shadow-xl rounded-2xl p-8 border ${card.badge === "Most Popular" ? "border-[#6BC4BC]" : "border-[#2A2A2A]"} flex flex-col relative`}
           >
             {card.badge && (
               <span className={`absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${card.badge === "Most Popular" ? "bg-[#6BC4BC] text-black" : "bg-gray-700 text-white"}`}>
