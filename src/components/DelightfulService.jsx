@@ -64,11 +64,15 @@ const DelightfulService = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Left side - Features list */}
-          <div ref={leftRef} className="animate-on-scroll fade-in-left space-y-6">
+          <div className="relative group/scroll lg:col-span-1">
+            <div 
+              ref={leftRef} 
+              className="animate-on-scroll fade-in-left flex lg:flex-col overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory lg:snap-none hide-scrollbar gap-4 lg:gap-0 lg:space-y-6 pb-8 lg:pb-0 -mx-6 px-6 lg:mx-0 lg:px-0"
+            >
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group p-6 rounded-xl bg-[#121212] border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#6BC4BC]/10"
+                className="flex-none w-[85%] sm:w-[400px] lg:w-full snap-center group p-6 rounded-xl bg-[#121212] border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#6BC4BC]/10 h-full"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-start gap-4">
@@ -86,6 +90,17 @@ const DelightfulService = () => {
                 </div>
               </div>
             ))}
+            </div>
+
+            {/* Mobile Scroll Indicator */}
+            <div className="flex lg:hidden justify-center gap-2 mt-2">
+              <div className="px-4 py-2 rounded-full bg-[#6BC4BC]/5 border border-[#6BC4BC]/20 text-[#7DD3CB] text-xs font-bold backdrop-blur-md flex items-center gap-2 animate-pulse">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+                Swipe
+              </div>
+            </div>
           </div>
 
           {/* Right side - Visual element */}
