@@ -10,7 +10,7 @@ const MeetNOVA = () => {
   return (
     <section id="meet-nova" className="w-full flex flex-col items-center justify-center ">
       {/* Hero Image Container - Responsive sizing with cyan border and glow effect */}
-      <div className='w-[95%] max-w-[1600px] mx-auto h-auto md:h-[800px] lg:h-[700px] xl:h-[950px] rounded-[30px] md:rounded-[83px] overflow-hidden mt-8 relative flex items-start justify-center border-2' style={{ borderColor: '#6BC4BC', boxShadow: '0 0 15px rgba(107, 196, 188, 0.4), 0 0 30px rgba(107, 196, 188, 0.2)' }} >
+      <div className='w-[95%] max-w-[1600px] mx-auto h-auto md:h-[800px] lg:h-[700px] xl:h-[950px] rounded-[30px] md:rounded-[83px] overflow-hidden mt-0 relative flex items-start justify-center border-2' style={{ borderColor: '#6BC4BC', boxShadow: '0 0 15px rgba(107, 196, 188, 0.4), 0 0 30px rgba(107, 196, 188, 0.2)' }} >
         {/* Mobile Image - Visible on small screens only */}
         <img
           src={novaMobileImage}

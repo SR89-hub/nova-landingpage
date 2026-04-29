@@ -154,7 +154,7 @@ const Hero = () => {
                 <span className="text-3xl lg:text-3xl font-semibold text-gray-200 mt-4 block tracking-tight" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
                   Your First Step Toward a
                   <br />
-                  <span className="text-white italic">smarter inbox</span>
+                  <span className="text-white">smarter inbox</span>
                 </span>
               </h2>
 
