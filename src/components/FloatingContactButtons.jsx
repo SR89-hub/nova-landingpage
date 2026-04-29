@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Mail, ArrowUp } from 'lucide-react';
+import { Phone, Mail, ArrowUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 /**

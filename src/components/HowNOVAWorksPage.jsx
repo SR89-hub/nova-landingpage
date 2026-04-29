@@ -13,12 +13,9 @@ import {
   Cpu,
   Zap,
   FileText,
-  File,
-  Download,
   BarChart3,
   Settings,
   Mail,
-
 } from 'lucide-react';
 
 /**
@@ -65,75 +62,6 @@ const HowNOVAWorksPage = () => {
 
   const refs = [step1Ref, step2Ref, step3Ref, step4Ref];
 
-  // FileTypeVisualization Component
-  const FileTypeVisualization = () => (
-    <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 md:p-8 min-h-[200px] sm:min-h-[250px] md:min-h-[300px] lg:min-h-[400px]">
-      {/* File extensions positioned around center */}
-      <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-1 sm:gap-2 p-2 sm:p-4 md:p-8">
-        {/* Top row */}
-        <div className="col-start-1 row-start-1 flex items-center justify-center">
-          <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#121212] border border-[#6BC4BC]/50 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:border-[#6BC4BC] transition-all duration-300">
-            .WEBM
-          </div>
-        </div>
-        <div className="col-start-2 row-start-1 flex items-center justify-center">
-          <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#121212] border border-[#6BC4BC]/50 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:border-[#6BC4BC] transition-all duration-300">
-            .PDF
-          </div>
-        </div>
-        <div className="col-start-3 row-start-1 flex items-center justify-center">
-          <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#121212] border border-[#6BC4BC]/50 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:border-[#6BC4BC] transition-all duration-300">
-            .JSON
-          </div>
-        </div>
-
-        {/* Middle row */}
-        <div className="col-start-1 row-start-2 flex items-center justify-center">
-          <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#121212] border border-[#6BC4BC]/50 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:border-[#6BC4BC] transition-all duration-300">
-            .PNG
-          </div>
-        </div>
-        {/* Center is empty for the icon */}
-        <div className="col-start-2 row-start-2"></div>
-        <div className="col-start-3 row-start-2 flex items-center justify-center">
-          <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#121212] border border-[#6BC4BC]/50 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:border-[#6BC4BC] transition-all duration-300">
-            .TXT
-          </div>
-        </div>
-
-        {/* Bottom row */}
-        <div className="col-start-1 row-start-3 flex items-center justify-center">
-          <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#121212] border border-[#6BC4BC]/50 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:border-[#6BC4BC] transition-all duration-300">
-            .MP4
-          </div>
-        </div>
-        <div className="col-start-2 row-start-3 flex items-center justify-center">
-          <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#121212] border border-[#6BC4BC]/50 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:border-[#6BC4BC] transition-all duration-300">
-            .DOCX
-          </div>
-        </div>
-        <div className="col-start-3 row-start-3 flex items-center justify-center">
-          <div className="px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-[#121212] border border-[#6BC4BC]/50 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:border-[#6BC4BC] transition-all duration-300">
-            .CSV
-          </div>
-        </div>
-      </div>
-
-      {/* Central document icon with download */}
-      <div className="relative z-10 flex flex-col items-center justify-center  ">
-        <div className="relative">
-          {/* Document icon */}
-          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 text-[#6BC4BC]/80">
-            <File className="w-full h-full drop-shadow-[0_0_8px_rgba(107, 196, 188,0.6)]" strokeWidth={1.5} />
-          </div>
-          {/* Download icon overlay */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 lg:w-16 lg:h-16 text-[#7DD3CB]">
-            <Download className="w-full h-full drop-shadow-[0_0_8px_rgba(107, 196, 188,0.6)]" strokeWidth={2} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <section id="working" className="py-20 bg-[#0A0A0A] relative overflow-hidden">

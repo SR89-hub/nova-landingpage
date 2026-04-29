@@ -7,7 +7,6 @@ import {
   FileQuestion,
 
   Lightbulb,
-  Mail,
   UserCheck,
   Globe,
   Settings
