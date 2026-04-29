@@ -72,7 +72,7 @@ const DelightfulService = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="flex-none w-[85%] sm:w-[400px] lg:w-full snap-center group p-6 rounded-xl bg-[#121212] border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#6BC4BC]/10 h-full"
+                className="flex-none w-[80%] sm:w-[400px] lg:w-full min-h-[280px] lg:min-h-0 snap-center group p-6 sm:p-8 rounded-2xl bg-[#121212] border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#6BC4BC]/10 flex flex-col justify-center h-auto lg:h-full"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-start gap-4">
