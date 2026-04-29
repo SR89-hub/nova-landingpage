@@ -12,11 +12,6 @@ import nova13 from '../assets/nova 13.png';
  */
 const AgentNOVACapabilities = () => {
   const titleRef = useScrollAnimation();
-  const card1Ref = useScrollAnimation();
-  const card2Ref = useScrollAnimation();
-  const card3Ref = useScrollAnimation();
-  const card4Ref = useScrollAnimation();
-  const lastCardRef = useScrollAnimation();
 
   const capabilities = [
     {
@@ -39,15 +34,13 @@ const AgentNOVACapabilities = () => {
       description: 'Track your success in real-time with visual dashboards that monitor everything from open rates to individual clicks.Easily follow every recipient’s journey and turn your campaign data into professional PDF reports with a single click..',
       image: nova10,
     },
-    // {
-    //   title: 'Instant Checkout in Chat',
-    //   description: 'Accept payments directly inside the chat to close sales the moment customers are ready to buy. Remove extra steps, reduce drop-offs, and turn your conversations into instant conversions with a smooth, secure in-chat checkout experience.',
-    //   image: SeamlessIntegrationsImage,
-    // },
-
+    {
+      title: 'Instant Idea Generation',
+      description: 'Eliminate writer\'s block instantly. NOVA generates diverse creative angles and endless variations from a blank page in seconds, providing fresh perspectives that allow you to choose or build upon multiple options.',
+      image: nova13,
+    },
   ];
 
-  const refs = [card1Ref, card2Ref, card3Ref, card4Ref];
 
   return (
     <section id="capabilities" className="py-20 bg-[#0A0A0A] overflow-hidden">
@@ -61,68 +54,50 @@ const AgentNOVACapabilities = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-          {capabilities.map((capability, index) => {
-            const delay = `delay-${(index + 1) * 100}`;
-            return (
-              <div
-                key={index}
-                ref={refs[index]}
-                className={`animate-on-scroll fade-in-up ${delay} group`}
-              >
-                <div className="flex flex-col rounded-2xl overflow-hidden border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/20 bg-[#1A1A1A]">
-                  {/* Content Section - Top */}
-                  <div className="p-4 sm:p-6 md:p-8 flex-1">
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                      {capability.title}
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                      {capability.description}
-                    </p>
-                  </div>
+        {/* Horizontal Scroll Container */}
+        <div className="relative group/scroll">
+          <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 md:gap-8 pb-12 px-4 md:px-0 -mx-4 md:mx-0">
+            {capabilities.map((capability, index) => {
+              const delay = `delay-${(index + 1) * 100}`;
+              return (
+                <div
+                  key={index}
+                  className={`flex-none w-[85%] sm:w-[450px] md:w-[500px] snap-center animate-on-scroll fade-in-up ${delay} group`}
+                >
+                  <div className="flex flex-col h-full rounded-2xl overflow-hidden border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/20 bg-[#1A1A1A]">
+                    {/* Content Section - Top */}
+                    <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                        {capability.title}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed text-sm sm:text-base flex-1" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                        {capability.description}
+                      </p>
+                    </div>
 
-                  {/* Image Section - Bottom */}
-                  <div className="relative h-auto aspect-square sm:aspect-video md:h-[300px] lg:h-[350px] overflow-hidden p-4 flex justify-center items-center bg-[#101010]">
-                    <img
-                      src={capability.image}
-                      alt={capability.title}
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                    />
-                    {/* Optional overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+                    {/* Image Section - Bottom */}
+                    <div className="relative h-[250px] sm:h-[300px] overflow-hidden p-6 flex justify-center items-center bg-[#101010]">
+                      <img
+                        src={capability.image}
+                        alt={capability.title}
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      />
+                      {/* Optional overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
 
-        {/* Full width last card with row layout */}
-        <div
-          ref={lastCardRef}
-          className="animate-on-scroll fade-in-up delay-600 group mt-8 max-w-7xl mx-auto"
-        >
-          <div className="flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-gray-800 hover:border-[#6BC4BC]/50 transition-all duration-500 hover:shadow-2xl hover:shadow-[#6BC4BC]/20 bg-[#1A1A1A]">
-            {/* Content Section - Left */}
-            <div className="flex-1 p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 sm:mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
-                Instant Idea Generation
-              </h3>
-              <p className="text-gray-300 leading-relaxed text-sm sm:text-base" style={{ fontFamily: "'Poppins', sans-serif" }}>
-                Eliminate writer's block instantly. NOVA generates diverse creative angles and endless variations from a blank page in seconds,
-                providing fresh perspectives that allow you to choose or build upon multiple options.
-              </p>
-            </div>
-
-            {/* Image Section - Right */}
-            <div className="relative w-full lg:w-1/2 h-auto aspect-square sm:aspect-video md:h-[300px] lg:min-h-[350px] overflow-hidden p-4 flex justify-center items-center bg-[#101010]">
-              <img
-                src={nova13}
-                alt="Instant Checkout in Chat"
-                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-              />
-              {/* Optional overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+          {/* Scroll Indicators */}
+          <div className="flex justify-center gap-2 mt-4">
+            <div className="px-4 py-2 rounded-full bg-[#6BC4BC]/5 border border-[#6BC4BC]/20 text-[#7DD3CB] text-xs font-bold backdrop-blur-md flex items-center gap-2 animate-pulse">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+              Swipe to Explore
             </div>
           </div>
         </div>
