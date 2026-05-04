@@ -34,7 +34,7 @@ const FAQs = () => {
     },
     {
       question: 'Can I use NOVA for platforms other than Email?',
-      answer: 'Currently, NOVA is specifically optimized for Email. This ensures every message meets the unique formatting and engagement best practices for these three primary channels.',
+      answer: 'Currently, NOVA is specifically optimized for Email. This ensures every message meets the unique formatting and engagement best practices for this primary communication channel.',
       icon: <MessageCircleQuestion className="w-6 h-6" />,
     },
     {

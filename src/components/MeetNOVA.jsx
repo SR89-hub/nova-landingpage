@@ -10,19 +10,19 @@ const MeetNOVA = () => {
   return (
     <section id="meet-nova" className="w-full flex flex-col items-center justify-center ">
       {/* Hero Image Container - Responsive sizing with cyan border and glow effect */}
-      <div className='w-[95%] max-w-[1600px] mx-auto h-auto md:h-[800px] lg:h-[700px] xl:h-[950px] rounded-[30px] md:rounded-[83px] overflow-hidden mt-0 relative flex items-start justify-center border-2' style={{ borderColor: '#6BC4BC', boxShadow: '0 0 15px rgba(107, 196, 188, 0.4), 0 0 30px rgba(107, 196, 188, 0.2)' }} >
+      <div className='w-[95%] max-w-[1600px] mx-auto min-h-auto md:min-h-[800px] lg:min-h-[700px] xl:min-h-[950px] rounded-[30px] md:rounded-[83px] overflow-hidden mt-0 relative flex items-center justify-center border-2' style={{ borderColor: '#6BC4BC', boxShadow: '0 0 15px rgba(107, 196, 188, 0.4), 0 0 30px rgba(107, 196, 188, 0.2)' }} >
         {/* Mobile Image - Visible on small screens only */}
         <img
           src={novaMobileImage}
           alt="NOVA"
-          className="w-full h-auto object-contain md:hidden rounded-[38px]"
+          className="w-full h-full object-cover md:hidden rounded-[30px]"
         />
         {/* Desktop Image - Visible on medium screens and above */}
         <img
           src={novaImage}
           alt="NOVA"
-          className="hidden md:block w-full h-full object-cover object-top rounded-[83px]"
-          style={{ objectPosition: 'center top' }}
+          className="hidden md:block w-full h-full object-cover rounded-[83px]"
+          style={{ objectPosition: 'center' }}
         />
       </div>
 
@@ -64,9 +64,9 @@ const MeetNOVA = () => {
             </span>{" "}
             Powered by{" "}
             {/* Highlighted "EVOKE" with gradient */}
-            <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-bold">
+            <t></t><span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-bold">
               EVOKE AI
-              <t></t></span>
+              <t></t></span> <t></t>
             We provide a secure, real-time platform that empowers you to craft, track, and optimize your outreach with surgical precision
             , From crafting emails to designing effective win-back automations, NOVA ensures your emails achieve maximum results.
             Our mission is to eliminate the manual overhead of email marketing, allowing you to focus on strategy while {" "}

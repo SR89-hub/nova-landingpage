@@ -16,22 +16,22 @@ const AgentNOVACapabilities = () => {
   const capabilities = [
     {
       title: 'Smart Message Crafting',
-      description: 'NOVA combines your creativity with AI to make email marketing easy.Write your own messages or let the NOVA Crafter generate high-performing copy for you.Our automatic three-step follow-up ensures you never miss a lead or a connection.NOVA handles the busy work so you can focus on growing your business..',
+      description: 'NOVA combines your creativity with AI to make email marketing easy. Write your own messages or let the NOVA Crafter generate high-performing copy for you. Our automatic three-step follow-up ensures you never miss a lead or a connection. NOVA handles the busy work so you can focus on growing your business.',
       image: nova9,
     },
     {
-      title: ' Enterprise-Grade Security',
-      description: 'nova keeps your account safe with high-level login security and strict session management.Your organizations data is fully encrypted and isolated in secure, private environments.We handle the technical safeguards so you can manage your team with total peace of mind..',
+      title: 'Enterprise-Grade Security',
+      description: 'NOVA keeps your account safe with high-level login security and strict session management. Your organization\'s data is fully encrypted and isolated in secure, private environments. We handle the technical safeguards so you can manage your team with total peace of mind.',
       image: nova11,
     },
     {
-      title: 'Intelligent Influencer Discovery',
-      description: 'NOVA makes finding influencers easy by filtering for your specific niche, location, and audience size.Our system uses real engagement data to match you with creators who deliver proven results.We handle the searching and the stats so you can focus on building a brand that grows..',
+      title: 'Intelligent Lead Discovery',
+      description: 'NOVA makes finding high-quality leads easy by filtering for your specific niche, location, and audience profile. Our system uses real engagement data to match you with contacts who deliver proven results. We handle the searching and the stats so you can focus on building a brand that grows.',
       image: nova12,
     },
     {
       title: 'Precision Analytics & Tracking',
-      description: 'Track your success in real-time with visual dashboards that monitor everything from open rates to individual clicks.Easily follow every recipient’s journey and turn your campaign data into professional PDF reports with a single click..',
+      description: 'Track your success in real-time with visual dashboards that monitor everything from open rates to individual clicks. Easily follow every recipient’s journey and turn your campaign data into professional PDF reports with a single click.',
       image: nova10,
     },
     {
@@ -47,7 +47,7 @@ const AgentNOVACapabilities = () => {
       <div className="container mx-auto px-6">
         <div ref={titleRef} className="text-center max-w-3xl mx-auto animate-on-scroll fade-in-up mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>
-            Key features that<span className="bg-gradient-to-r from-[#7DD3CB] to-[#5BAFA8] bg-clip-text text-transparent"> power</span> your business.
+            Key features that <span className="bg-gradient-to-r from-[#7DD3CB] to-[#5BAFA8] bg-clip-text text-transparent">power</span> your business.
           </h2>
           <p className="text-base sm:text-lg text-gray-400" style={{ fontFamily: "'Poppins', sans-serif" }}>
             Powerful capabilities designed to transform your email marketing and outreach operations

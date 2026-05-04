@@ -639,3 +639,66 @@ html {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
 }
+
+/* Custom Hero Design Classes */
+.gradient-bg-hero {
+  background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.08) 0%, rgba(10, 10, 10, 0) 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.float-animation {
+  animation: float-hero 6s ease-in-out infinite;
+}
+
+@keyframes float-hero {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Tailwind-style animation utilities */
+.animate-in {
+  animation-duration: 1000ms;
+  animation-fill-mode: both;
+}
+
+.fade-in {
+  animation-name: fade-in-keyframes;
+}
+
+.zoom-in {
+  animation-name: zoom-in-keyframes;
+}
+
+.slide-in-from-left-4 {
+  animation-name: slide-in-left-keyframes;
+}
+
+.slide-in-from-right-8 {
+  animation-name: slide-in-right-keyframes;
+}
+
+@keyframes fade-in-keyframes {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoom-in-keyframes {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slide-in-left-keyframes {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right-keyframes {
+  from { transform: translateX(40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

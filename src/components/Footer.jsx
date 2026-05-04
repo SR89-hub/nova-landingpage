@@ -14,7 +14,7 @@ const Footer = () => {
       <div ref={ref} className="container mx-auto px-6 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8 animate-on-scroll fade-in-up">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h3
               className="text-2xl font-bold text-white"
               style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 800 }}
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="pl-8">
+          <div className="md:pl-8 text-center md:text-left">
             <h4
               className="text-white font-semibold mb-4 text-lg"
               style={{ fontFamily: "'Inter', sans-serif" }}
@@ -76,7 +76,7 @@ const Footer = () => {
                     <a
                       href={link.href}
                       onClick={handleClick}
-                      className="text-gray-400 hover:text-[#6BC4BC] transition-colors duration-300 text-sm flex items-center group"
+                      className="text-gray-400 hover:text-[#6BC4BC] transition-colors duration-300 text-sm flex items-center justify-center md:justify-start group"
                     >
                       <span className="mr-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
                       {link.label}
@@ -131,7 +131,7 @@ const Footer = () => {
           </div> */}
 
           {/* Contact & Social */}
-          <div>
+          <div className="text-center md:text-left">
             <h4
               className="text-white font-semibold mb-4 text-lg"
               style={{ fontFamily: "'Inter', sans-serif" }}
@@ -183,12 +183,12 @@ const Footer = () => {
               </li>
             </ul>
             {/* Social Media Icons with Isometric Effect */}
-            <div className="max-w-fit rounded-[15px] flex flex-row items-center justify-center gap-4 backdrop-blur-[15px] transition-all duration-500 hover:bg-white/5"
+            <div className="mx-auto md:mx-0 max-w-fit rounded-[15px] flex flex-row items-center justify-center gap-4 backdrop-blur-[15px] transition-all duration-500 hover:bg-white/5"
               style={{
                 boxShadow: 'inset 0 0 20px rgba(255, 255, 255, 0.192), inset 0 0 5px rgba(255, 255, 255, 0.274), 0 5px 5px rgba(0, 0, 0, 0.164)'
               }}
             >
-              <ul className="p-4 flex flex-row gap-4 items-center justify-center">
+              <ul className="p-3 md:p-4 flex flex-row gap-3 md:gap-4 items-center justify-center">
                 {/* LinkedIn */}
                 <li className="relative cursor-pointer group iso-pro-item">
                   <span className="absolute opacity-0 group-hover:opacity-20 transition-all duration-300 rounded-full h-[60px] w-[60px] border border-[#0A66C2]"

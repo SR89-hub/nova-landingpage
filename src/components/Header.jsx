@@ -40,27 +40,35 @@ const Header = () => {
 
   // Handle scroll effects for header visibility and active section highlighting
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      // Check if user has scrolled past the header
-      setIsScrolled(window.scrollY > headerHeight);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Check if user has scrolled past the header
+          setIsScrolled(window.scrollY > headerHeight);
 
-      // Find the currently active section
-      const sections = document.querySelectorAll('section[id]');
-      let currentSection = '';
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        if (window.scrollY >= sectionTop - headerHeight - 20) { // Adjusted offset for better accuracy
-          currentSection = section.getAttribute('id');
-        }
-      });
+          // Find the currently active section
+          const sections = document.querySelectorAll('section[id]');
+          let currentSection = '';
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - headerHeight - 120) { // Adjusted offset for better accuracy
+              currentSection = section.getAttribute('id');
+            }
+          });
 
-      if (currentSection !== activeSection) {
-        setActiveSection(currentSection);
+          if (currentSection !== activeSection) {
+            setActiveSection(currentSection);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
     // Add scroll listener
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Initial check
     handleScroll();
@@ -123,19 +131,19 @@ const Header = () => {
               const isActive = activeSection === sectionId;
 
               // Handle smooth scroll to section with header offset
-              const handleClick = (e) => {
-                e.preventDefault();
-                const element = document.querySelector(item.href);
-                if (element) {
-                  const headerOffset = 100; // Offset to account for fixed header
-                  const elementPosition = element.getBoundingClientRect().top;
-                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                  window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth' // Smooth scroll animation
-                  });
-                }
-              };
+                const handleClick = (e) => {
+                  e.preventDefault();
+                  const element = document.querySelector(item.href);
+                  if (element) {
+                    const offset = headerHeight + 20; // Dynamic offset
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                };
               return (
                 <a
                   key={item.href}
@@ -165,9 +173,9 @@ const Header = () => {
               e.preventDefault();
               const element = document.querySelector('#contact');
               if (element) {
-                const headerOffset = 100; // Offset for fixed header
+                const offset = headerHeight + 20;
                 const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
                 window.scrollTo({
                   top: offsetPosition,
                   behavior: 'smooth'
@@ -189,36 +197,38 @@ const Header = () => {
               className="text-white focus:outline-none p-3 rounded-lg hover:bg-white/10 transition-colors duration-300"
               onClick={toggleMenu}
             >
-              <svg
-                id="menu-open-icon"
-                className={`w-6 h-6 transition-all duration-300 ${isMenuOpen ? 'hidden opacity-0 rotate-90' : 'opacity-100 rotate-0'}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-              <svg
-                id="menu-close-icon"
-                className={`w-6 h-6 transition-all duration-300 ${isMenuOpen ? 'opacity-100 rotate-0' : 'hidden opacity-0 -rotate-90'}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <div className="relative w-6 h-6">
+                <svg
+                  id="menu-open-icon"
+                  className={`w-6 h-6 absolute inset-0 transition-all duration-300 ${isMenuOpen ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                </svg>
+                <svg
+                  id="menu-close-icon"
+                  className={`w-6 h-6 absolute inset-0 transition-all duration-300 ${isMenuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </div>
             </button>
           </div>
         </div>
@@ -245,16 +255,16 @@ const Header = () => {
               e.preventDefault();
               const element = document.querySelector('#contact');
               if (element) {
-                const headerOffset = 100; // Offset for fixed header
+                const offset = headerHeight + 20;
                 const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
                 window.scrollTo({
                   top: offsetPosition,
                   behavior: 'smooth'
                 });
               }
             }}
-            className="bg-gradient-to-r from-white to-white text-black font-semibold px-4 py-1.5 md:px-6 md:py-2 rounded-lg  transition-all duration-300 shadow-lg  hover:scale-105 text-sm md:text-base flex items-center gap-2 group"
+            className="bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] text-black font-bold px-4 py-1.5 md:px-6 md:py-2 rounded-lg transition-all duration-300 shadow-xl shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:scale-105 text-sm md:text-base flex items-center gap-2 group"
           >
             Connect to NOVA
             {/* Arrow icon with hover animation */}
@@ -316,12 +326,12 @@ const Header = () => {
               // Handle navigation click - closes menu and scrolls to section
               const handleClick = (e) => {
                 e.preventDefault();
-                closeMenu(); // Close mobile menu
+                closeMenu(); 
                 const element = document.querySelector(item.href);
                 if (element) {
-                  const headerOffset = 100; // Offset for fixed header
+                  const offset = headerHeight + 20;
                   const elementPosition = element.getBoundingClientRect().top;
-                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                  const offsetPosition = elementPosition + window.pageYOffset - offset;
                   window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -352,9 +362,9 @@ const Header = () => {
             closeMenu();
             const element = document.querySelector('#contact');
             if (element) {
-              const headerOffset = 100;
+              const offset = headerHeight + 20;
               const elementPosition = element.getBoundingClientRect().top;
-              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              const offsetPosition = elementPosition + window.pageYOffset - offset;
               window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'

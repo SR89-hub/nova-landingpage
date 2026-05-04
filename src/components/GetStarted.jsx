@@ -14,21 +14,21 @@ const GetStarted = () => {
   const steps = [
     {
       number: '1',
-      title: 'Sign Up & Get Started',
+      title: 'Sign Up & Connect',
       description:
-        'Create your account and start using NOVA immediately. No complex setup required—just sign up and begin.',
+        'Create your account and connect your email channels. No complex setup—just sign up and link your ecosystem.',
     },
     {
       number: '2',
-      title: 'Upload Your Files & Customize',
+      title: 'Customize Your AI',
       description:
-        'Feed NOVA your files, brand info, and custom instructions. The more you share, the smarter NOVA gets.',
+        'Feed NOVA your brand guidelines, past campaigns, and target audience data. The more context you provide, the sharper NOVA writes.',
     },
     {
       number: '3',
-      title: 'Start Automating Tasks',
+      title: 'Automate & Optimize',
       description:
-        'Begin automating your daily tasks—from image editing to financial analysis. Experience productivity like never before.',
+        'Launch AI-driven outreach and let NOVA handle the crafting, tracking, and win-back automations with surgical precision.',
     },
   ];
 

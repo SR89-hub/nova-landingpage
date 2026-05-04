@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
 import Hero from "./Hero";
+import HeroMobile from "./HeroMobile";
 import MeetNOVA from "./MeetNOVA";
 import AIAdoption from "./AIAdoption";
 import TrustedBy from "./TrustedBy";
@@ -34,7 +35,8 @@ function Home() {
       <Header />
       <main>
         {/* Landing Page Sections - In order of appearance */}
-        <Hero /> {/* Hero section with main CTA */}
+        <Hero /> {/* Desktop Hero section */}
+        <HeroMobile /> {/* Mobile-optimized Hero section */}
         <MeetNOVA /> {/* Introduction to NOVA */}
         <TrustedBy /> {/* Trust indicators */}
         <HowNOVAWorksPage /> {/* How NOVA works explanation */}
