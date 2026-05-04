@@ -30,7 +30,7 @@ const TrustedBy = () => {
   ];
 
   return (
-    <section className="py-16 bg-[#0A0A0A] border-t border-b border-gray-900/50">
+    <section className="pt-10 pb-16 bg-[#0A0A0A] border-t border-b border-gray-900/50">
       <div className="container mx-auto px-6">
         <div ref={titleRef} className="text-center max-w-3xl mx-auto animate-on-scroll fade-in-up mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4" style={{ fontFamily: "'Outfit', sans-serif" }}>

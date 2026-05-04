@@ -65,6 +65,12 @@ const HowNOVAWorksPage = () => {
 
   return (
     <section id="working" className="py-20 bg-[#0A0A0A] relative overflow-hidden">
+      {/* Section Separator - Elegant Gradient Line */}
+      <div className="absolute top-0 left-0 w-full flex justify-center z-20">
+        <div className="w-[70%] h-px bg-gradient-to-r from-transparent via-[#6BC4BC]/30 to-transparent"></div>
+        <div className="absolute top-0 w-[40%] h-px bg-gradient-to-r from-transparent via-[#6BC4BC]/60 to-transparent blur-[2px]"></div>
+      </div>
+
       {/* Floating revolving icons - positioned relative to section */}
       {/* Upload icon - Top left corner */}
       <div className="absolute top-[10%] left-[3%] w-14 h-14 text-[#6BC4BC]/50 animate-revolve-1 hidden lg:block pointer-events-none z-0">

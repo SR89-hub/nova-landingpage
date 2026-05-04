@@ -21,7 +21,7 @@ const MeetNOVA = () => {
         <img
           src={novaImage}
           alt="NOVA"
-          className="hidden md:block w-full h-full object-cover rounded-[83px]"
+          className="hidden  sm:block w-full h-full object-cover rounded-[83px]"
           style={{ objectPosition: 'center' }}
         />
       </div>
@@ -51,7 +51,7 @@ const MeetNOVA = () => {
 
           {/* Body Paragraph - Description of NOVA */}
           <p
-            className="mt-6 text-lg sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl text-gray-300 leading-relaxed"
+            className="mt-6 text-lg sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl text-gray-100 leading-relaxed"
             style={{ fontFamily: "'Barlow', sans-serif" }}
           >
             NOVA is a modern, comprehensive <span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-semibold">
@@ -66,7 +66,7 @@ const MeetNOVA = () => {
             {/* Highlighted "EVOKE" with gradient */}
             <t></t><span className="bg-gradient-to-r from-[#7DD3CB] via-[#6BC4BC] to-[#5BAFA8] bg-clip-text text-transparent font-bold">
               EVOKE AI
-              <t></t></span> <t></t>
+              <t></t></span><t></t>
             We provide a secure, real-time platform that empowers you to craft, track, and optimize your outreach with surgical precision
             , From crafting emails to designing effective win-back automations, NOVA ensures your emails achieve maximum results.
             Our mission is to eliminate the manual overhead of email marketing, allowing you to focus on strategy while {" "}

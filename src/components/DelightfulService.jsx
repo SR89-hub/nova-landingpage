@@ -95,27 +95,47 @@ const DelightfulService = () => {
 
           {/* Right side - Visual element */}
           <div ref={rightRef} className="hidden lg:block animate-on-scroll fade-in-right delay-200 relative mt-12 lg:mt-0">
-            <div className="relative">
-              {/* Animated circles */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] border-2 border-[#6BC4BC]/20 rounded-full animate-pulse"></div>
+            <div className="relative flex items-center justify-center">
+              
+              {/* Massive Back Glow Layer 1 */}
+              <div className="absolute w-[500px] h-[500px] bg-[#6BC4BC]/10 rounded-full blur-[100px] animate-pulse-slow pointer-events-none"></div>
+              
+              {/* Core Glow Layer 2 */}
+              <div className="absolute w-[350px] h-[350px] bg-[#6BC4BC]/20 rounded-full blur-[60px] animate-pulse pointer-events-none"></div>
 
-              {/* Center content with Services image in circle */}
+              {/* Rotating Shimmer Ring */}
+              <div className="absolute w-[480px] h-[480px] border border-[#6BC4BC]/10 rounded-full animate-spin-slow pointer-events-none">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-[#6BC4BC]/30 blur-[30px] rounded-full"></div>
+              </div>
+
               <div className="relative z-10 flex items-center justify-center">
-                {/* Background circle */}
-                <div className="absolute w-[260px] h-[260px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] rounded-full bg-gradient-to-br from-[#121212] via-[#1A1A1A] to-[#0A0A0A] border-2 border-gray-800 shadow-2xl">
-                  {/* Subtle cyan glow overlay */}
+                {/* Background Halo */}
+                <div className="absolute w-[320px] h-[320px] md:w-[440px] md:h-[440px] rounded-full bg-gradient-to-br from-[#121212] via-[#1A1A1A] to-[#0A0A0A] border border-[#6BC4BC]/30 shadow-[0_0_50px_rgba(107,196,188,0.2)]">
                   <div className="absolute inset-0 rounded-full" style={{
-                    background: 'radial-gradient(circle, rgba(0, 209, 255, 0.1) 0%, rgba(0, 209, 255, 0.05) 50%, transparent 100%)'
+                    background: 'radial-gradient(circle at center, rgba(107, 196, 188, 0.2) 0%, transparent 70%)'
                   }}></div>
                 </div>
-                {/* Image circle */}
-                <div className="relative z-10 w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden border-4 border-[#6BC4BC]/40 shadow-2xl shadow-[#6BC4BC]/20">
+
+                {/* The Shiny Image Container */}
+                <div className="relative z-20 w-[280px] h-[280px] md:w-[380px] md:h-[380px] rounded-full overflow-hidden border-4 border-[#6BC4BC]/50 shadow-[0_0_40px_rgba(107,196,188,0.3)] group cursor-pointer">
+                  
+                  {/* Image itself */}
                   <img
                     src={ServicesImage}
                     alt="Services"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+
+                  {/* Shiny Shimmer Overlay Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out pointer-events-none"></div>
+                  
+                  {/* Constant Subtle Glow Overlay */}
+                  <div className="absolute inset-0 bg-[#6BC4BC]/5 pointer-events-none group-hover:bg-transparent transition-colors duration-500"></div>
                 </div>
+
+                {/* Outer Pulsing Rings */}
+                <div className="absolute w-[300px] h-[300px] md:w-[410px] md:h-[410px] border-2 border-[#6BC4BC]/20 rounded-full animate-ping-slow opacity-20 pointer-events-none"></div>
+                <div className="absolute w-[360px] h-[360px] md:w-[480px] md:h-[480px] border border-[#6BC4BC]/10 rounded-full animate-pulse-slow pointer-events-none"></div>
               </div>
             </div>
           </div>

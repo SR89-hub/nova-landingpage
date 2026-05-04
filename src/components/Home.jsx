@@ -38,12 +38,12 @@ function Home() {
         <Hero /> {/* Desktop Hero section */}
         <HeroMobile /> {/* Mobile-optimized Hero section */}
         <MeetNOVA /> {/* Introduction to NOVA */}
-        <TrustedBy /> {/* Trust indicators */}
         <HowNOVAWorksPage /> {/* How NOVA works explanation */}
         <AgentNOVACapabilities /> {/* Key features section */}
         <DelightfulService /> {/* Service highlights */}
         <AIAdoption/> {/* AI adoption section */}
         <PricingSection /> {/* Pricing plans */}
+        <TrustedBy /> {/* Trust indicators moved after pricing */}
         <Testimonials /> {/* Customer testimonials */}
         <FAQs /> {/* Frequently asked questions */}
         <Contact /> {/* Contact form */}

@@ -5,7 +5,7 @@ import {
   MessageCircleQuestion,
   ChevronDown,
   FileQuestion,
-
+  BarChart3,
   Lightbulb,
   UserCheck,
   Globe,
@@ -46,6 +46,11 @@ const FAQs = () => {
       question: 'What is the Legacy Data Optimizer?',
       answer: 'It is an automated tool that cleans and verifies your imported contact lists. By filtering out invalid data, it ensures your campaigns reach only high-quality, verified contacts.',
       icon: <Globe className="w-6 h-6" />,
+    },
+    {
+      question: 'How do I track my campaign results?',
+      answer: 'NOVA provides a real-time Email Tracking dashboard. You can monitor open rates, clicks, and conversion data for every campaign, allowing you to optimize your strategy based on hard data.',
+      icon: <BarChart3 className="w-6 h-6" />,
     },
   ];
 
@@ -91,9 +96,9 @@ const FAQs = () => {
           </p>
         </div>
 
-        {/* FAQs List */}
-        <div ref={containerRef} className="max-w-4xl mx-auto">
-          <div className="space-y-4">
+        {/* FAQs List - Two Column Grid */}
+        <div ref={containerRef} className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {faqs.map((faq, index) => {
               const delay = `delay-${(index + 1) * 100}`;
               const isOpen = openIndex === index;
@@ -101,26 +106,26 @@ const FAQs = () => {
               return (
                 <div
                   key={index}
-                  className={`animate-on-scroll fade-in-up ${delay} group`}
+                  className={`animate-on-scroll fade-in-up ${delay} group h-fit`}
                 >
-                  <div className="relative bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212] border border-gray-800 rounded-2xl overflow-hidden hover:border-[#6BC4BC]/50 transition-all duration-500">
+                  <div className="relative bg-gradient-to-br from-[#121212] via-[#0F0F0F] to-[#121212] border border-gray-800 rounded-2xl overflow-hidden hover:border-[#6BC4BC]/50 transition-all duration-500 shadow-xl">
                     {/* Animated background gradient */}
                     <div className="absolute inset-0 bg-gradient-to-br from-[#6BC4BC]/0 via-[#6BC4BC]/5 to-[#5BAFA8]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                     {/* Question Button */}
                     <button
                       onClick={() => toggleFAQ(index)}
-                      className="relative z-10 w-full p-6 md:p-8 flex items-center justify-between text-left focus:outline-none transition-all duration-300"
+                      className="relative z-10 w-full p-6 flex items-center justify-between text-left focus:outline-none transition-all duration-300"
                     >
                       <div className="flex items-start gap-4 flex-1">
                         {/* Icon */}
-                        <div className="flex-shrink-0 mt-1 p-3 rounded-xl bg-gradient-to-br from-[#6BC4BC]/20 to-[#5BAFA8]/20 border border-[#6BC4BC]/30 text-[#7DD3CB] group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                        <div className="flex-shrink-0 mt-1 p-2 rounded-xl bg-gradient-to-br from-[#6BC4BC]/20 to-[#5BAFA8]/20 border border-[#6BC4BC]/30 text-[#7DD3CB] group-hover:scale-110 transition-all duration-300">
                           {faq.icon}
                         </div>
 
                         {/* Question Text */}
                         <div className="flex-1">
-                          <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-[#7DD3CB] transition-colors duration-300" style={{ fontFamily: "'Outfit', sans-serif" }}>
+                          <h3 className="text-base md:text-lg font-bold text-white group-hover:text-[#7DD3CB] transition-colors duration-300" style={{ fontFamily: "'Outfit', sans-serif" }}>
                             {faq.question}
                           </h3>
                         </div>
@@ -128,16 +133,16 @@ const FAQs = () => {
 
                       {/* Chevron Icon */}
                       <div className={`flex-shrink-0 ml-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
-                        <ChevronDown className="w-6 h-6 text-[#6BC4BC]" />
+                        <ChevronDown className="w-5 h-5 text-[#6BC4BC]" />
                       </div>
                     </button>
 
                     {/* Answer Section */}
                     <div className={`relative z-10 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                       }`}>
-                      <div className="px-6 md:px-8 pb-6 md:pb-8">
-                        <div className="pl-16 md:pl-20">
-                          <p className="text-gray-400 leading-relaxed text-base md:text-lg" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                      <div className="px-6 pb-6">
+                        <div className="pl-14">
+                          <p className="text-gray-400 leading-relaxed text-sm md:text-base" style={{ fontFamily: "'Poppins', sans-serif" }}>
                             {faq.answer}
                           </p>
                         </div>

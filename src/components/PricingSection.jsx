@@ -108,7 +108,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <div id="pricingSection" className="min-h-screen bg-[#0A0A0A] py-20 px-4">
+    <div id="pricingSection" className="min-h-screen bg-[#0A0A0A] pt-20 pb-10 px-4">
       <div className="max-w-6xl mx-auto text-center mb-14">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 " style={{ fontFamily: "'Outfit', sans-serif" }}>
           Find the <span className="section-title">Perfect Plan</span>
