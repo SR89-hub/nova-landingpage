@@ -98,23 +98,25 @@ const Header = () => {
           }`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div
-
+          <a
+            href="https://www.evokeai.in/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-2xl font-bold tracking-tighter text-white hover:scale-105 transition-transform duration-300 group"
           >
             <img
               src={evokeLogo}
               alt="EVOKE logo"
-              className="h-12 w-auto md:h-14 object-contain"
+              className="h-10 w-auto lg:h-14 object-contain"
             />
             <span className="relative inline-block text-[#7DD3CB] font-extrabold text-2xl" style={{ fontFamily: "'Outfit', sans-serif" }}>
               EVOKE AI
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#6BC4BC] group-hover:w-full transition-all duration-300"></span>
             </span>
-          </div>
+          </a>
 
           {/* Desktop Navigation - Only visible on medium screens and above */}
-          <nav className="hidden md:flex items-center space-x-2 px-4 py-4">
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 px-2 xl:px-4 py-4">
             {/* Navigation links array - maps to sections on the page */}
             {[
               { href: '#meet-nova', label: 'Meet NOVA' },
@@ -149,7 +151,7 @@ const Header = () => {
                   key={item.href}
                   href={item.href}
                   onClick={handleClick}
-                  className={`nav-link relative px-4 py-2 text-sm font-medium transition-all duration-300 ${isActive
+                  className={`nav-link relative px-2 xl:px-4 py-2 text-xs xl:text-sm font-medium transition-all duration-300 ${isActive
                     ? 'text-[#6BC4BC]'
                     : 'text-gray-300 hover:text-[#7DD3CB]'
                     }`}
@@ -182,7 +184,7 @@ const Header = () => {
                 });
               }
             }}
-            className="hidden md:block cta-button relative bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] text-black font-semibold px-6 py-2 rounded-lg hover:from-[#7DD3CB] hover:to-[#6BC4BC] transition-all duration-300 shadow-lg shadow-[#6BC4BC]/30 hover:shadow-[#6BC4BC]/50 hover:scale-105 overflow-hidden group"
+            className="hidden lg:block cta-button relative bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] text-black font-semibold px-4 xl:px-6 py-2 rounded-lg hover:from-[#7DD3CB] hover:to-[#6BC4BC] transition-all duration-300 shadow-lg shadow-[#6BC4BC]/30 hover:shadow-[#6BC4BC]/50 hover:scale-105 overflow-hidden group"
           >
             <span className="relative z-10">Connect to NOVA</span>
             {/* Hover overlay effect */}
@@ -190,7 +192,7 @@ const Header = () => {
           </a>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden relative z-[60]">
+          <div className="lg:hidden relative z-[60]">
             <button
               id="menu-btn"
               type="button"
@@ -237,14 +239,14 @@ const Header = () => {
       {/* Fixed Blur Ribbon - Secondary navigation bar that appears when scrolling down */}
       {/* This ribbon replaces the main header when user scrolls past it */}
       <div
-        className={`fixed left-0 right-0 z-40 h-12 md:h-14 transition-all duration-300 flex items-center justify-between ${isScrolled
+        className={`fixed left-0 right-0 z-40 h-12 lg:h-14 transition-all duration-300 flex items-center justify-between ${isScrolled
           ? 'bg-black shadow-2xl shadow-black/50 border-b border-[#6BC4BC]/20 top-0 opacity-100 translate-y-0'
           : 'opacity-0 -translate-y-full pointer-events-none'
           }`}
       >
         <div className="container mx-auto px-6 flex items-center justify-between w-full">
           {/* Brand name in ribbon */}
-          <span className="text-white text-xs sm:text-sm md:text-base font-medium font-extrabold">
+          <span className="text-white text-xs sm:text-sm lg:text-base font-medium font-extrabold">
             NOVA
             <span className="text-[#6BC4BC] ml-1"> AI Assistant </span>
           </span>
@@ -264,12 +266,12 @@ const Header = () => {
                 });
               }
             }}
-            className="bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] text-black font-bold px-4 py-1.5 md:px-6 md:py-2 rounded-lg transition-all duration-300 shadow-xl shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:scale-105 text-sm md:text-base flex items-center gap-2 group"
+            className="bg-gradient-to-r from-[#6BC4BC] to-[#5BAFA8] text-black font-bold px-4 py-1.5 lg:px-6 lg:py-2 rounded-lg transition-all duration-300 shadow-xl shadow-[#6BC4BC]/20 hover:shadow-[#6BC4BC]/40 hover:scale-105 text-sm lg:text-base flex items-center gap-2 group"
           >
             Connect to NOVA
             {/* Arrow icon with hover animation */}
             <svg
-              className="w-4 h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:translate-x-1"
+              className="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -289,12 +291,25 @@ const Header = () => {
       {/* Mobile Menu Sidebar */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed top-0 right-0 w-4/5 max-w-sm h-full bg-gradient-to-b from-black to-[#101010] shadow-2xl border-l border-[#6BC4BC]/20 transform transition-transform duration-300 flex flex-col p-8 z-50 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`lg:hidden fixed top-0 right-0 w-4/5 max-w-sm h-full bg-gradient-to-b from-black to-[#101010] shadow-2xl border-l border-[#6BC4BC]/20 transform transition-transform duration-300 flex flex-col p-8 z-50 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
       >
+        {/* Close Button Inside Sidebar */}
+        <button
+          onClick={closeMenu}
+          className="absolute top-6 right-6 text-gray-400 hover:text-[#6BC4BC] transition-all duration-300 active:scale-90"
+          aria-label="Close menu"
+        >
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
         <div className="flex-grow">
           <a
-            href="/"
+            href="https://www.evokeai.in/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-2xl font-bold tracking-tighter text-white mb-12 hover:scale-105 transition-transform duration-300 inline-block"
             onClick={closeMenu}
           >
@@ -380,7 +395,7 @@ const Header = () => {
       {/* Menu Overlay */}
       <div
         id="menu-overlay"
-        className={`md:hidden fixed inset-0 bg-black/60 z-30 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`lg:hidden fixed inset-0 bg-black/60 z-30 transition-opacity duration-300 ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
         onClick={closeMenu}
       />

@@ -30,7 +30,7 @@ const Footer = () => {
               <span className="text-gray-500 text-sm">
                 Powered by{' '}
                 <a
-                  href="https://evokeai.in/"
+                  href="https://www.evokeai.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#6BC4BC] font-semibold hover:text-[#7DD3CB] transition-colors duration-300"
@@ -279,7 +279,7 @@ const Footer = () => {
             <p className="text-gray-500 text-sm">
               © {new Date().getFullYear()} {' '}
               <a
-                href="https://evokeai.in/"
+                href="https://www.evokeai.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#6BC4BC] font-semibold hover:text-[#7DD3CB] transition-colors duration-300"
@@ -288,7 +288,7 @@ const Footer = () => {
               </a>. All rights reserved.
             </p>
             <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
-              <Link to="https://evokeai.in/" className="text-gray-500 hover:text-[#6BC4BC] transition-colors duration-300">
+              <Link to="https://www.evokeai.in/" className="text-gray-500 hover:text-[#6BC4BC] transition-colors duration-300">
                 Privacy Policy
               </Link>
 

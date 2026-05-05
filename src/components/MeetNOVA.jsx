@@ -15,13 +15,13 @@ const MeetNOVA = () => {
         <img
           src={novaMobileImage}
           alt="NOVA"
-          className="w-full h-full object-cover md:hidden rounded-[30px]"
+          className="w-full h-full object-cover lg:hidden rounded-[30px]"
         />
         {/* Desktop Image - Visible on medium screens and above */}
         <img
           src={novaImage}
           alt="NOVA"
-          className="hidden  sm:block w-full h-full object-cover rounded-[83px]"
+          className="hidden lg:block w-full h-full object-cover rounded-[83px]"
           style={{ objectPosition: 'center' }}
         />
       </div>

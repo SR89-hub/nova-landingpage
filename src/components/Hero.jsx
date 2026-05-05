@@ -8,7 +8,7 @@ import { Mail, Zap, BarChart3, Target, Send, MessageSquare, ShieldCheck } from '
  */
 const Hero = () => {
   return (
-    <section className="relative min-h-screen hidden md:flex items-center justify-center bg-gradient-to-b from-[#0A0A0A] via-[#101010] to-[#0A0A0A] overflow-hidden py-16 lg:py-24 mb-4 lg:mb-6">
+    <section className="relative min-h-screen hidden lg:flex items-center justify-center bg-gradient-to-b from-[#0A0A0A] via-[#101010] to-[#0A0A0A] overflow-hidden py-16 lg:py-24 mb-4 lg:mb-6">
       {/* Background Effect */}
       <div className="absolute inset-0 z-0 opacity-25">
         <EvilEye
